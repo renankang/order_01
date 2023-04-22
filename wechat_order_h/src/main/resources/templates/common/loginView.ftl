@@ -4,6 +4,13 @@
     <title>卖家管理系统后台</title>
     <link rel="stylesheet" href="/sell/css/style.css">
     <link href="https://cdn.bootcss.com/bootstrap/3.0.1/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .to_register{
+            position: absolute;
+            left: 430px;
+            top: 10px;
+        }
+    </style>
 </head>
 <body>
 
@@ -36,6 +43,9 @@
             <div class="form-group">
                 <div class="col-sm-offset-2 col-sm-10">
                     <button class="btn btn-default" id="loginBtn">登录</button>
+                    <div class="to_register">
+                        <a href="/sell/admin/toRegister">   还没账号，去注册！</a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -47,5 +57,5 @@
 <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
 <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <#--自动机定义的本地js请求-->
-<script src="../../js/login.js" th:src="@{/js/login.js}"></script>
+<script src="../../js/login.js" th :src="@{/js/login.js}"></script>
 </html>

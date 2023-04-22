@@ -89,7 +89,7 @@ public class AdminUserController {
     }
 
     @PostMapping("/save")
-    public ModelAndView save(@Valid SellerForm form ,
+    public ModelAndView save( @RequestBody  @Valid SellerForm form ,
                              BindingResult bindingResult ,
                              Map<String , Object> map){
         if(bindingResult.hasErrors()){
@@ -112,5 +112,20 @@ public class AdminUserController {
         map.put("msg" , "操作成功!");
         map.put("url" , "/sell/admin/list");
         return new ModelAndView("common/success" , map);
+    }
+
+
+    @GetMapping("/login")
+    public ModelAndView login(Map<String , Object> map){
+        map.put("msg" , "操作成功!");
+        map.put("url" , "/sell/admin/login");
+        return new ModelAndView("common/loginView" , map);
+    }
+
+    @GetMapping("/toRegister")
+    public ModelAndView toRegister(Map<String , Object> map){
+        map.put("msg" , "操作成功!");
+        map.put("url" , "/sell/admin/register");
+        return new ModelAndView("common/register" , map);
     }
 }
